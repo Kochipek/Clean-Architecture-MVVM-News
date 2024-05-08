@@ -23,9 +23,9 @@ class NewsRepositoryImpl(
         return Resource.Error(response.message())
     }
 
-    override suspend fun getNews(): Resource<NewsApiResponse> {
+    override suspend fun getNews(country : String, page: Int): Resource<NewsApiResponse> {
         // retrofit response is converted to Resource type and returned to use in viewmodel
-        return responseToResource(newsRemoteDataSource.getNews())
+        return responseToResource(newsRemoteDataSource.getNews(country, page))
     }
 
     override suspend fun getSearchedNews(searchQuery: String): Resource<NewsApiResponse> {
