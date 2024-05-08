@@ -1,4 +1,4 @@
-package com.kochipek.news_app.data
+package com.kochipek.news_app.data.model
 
 import com.google.gson.annotations.SerializedName
 

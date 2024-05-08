@@ -1,7 +1,7 @@
 package com.kochipek.news_app.domain.repository
 
-import com.kochipek.news_app.data.Article
-import com.kochipek.news_app.data.NewsApiResponse
+import com.kochipek.news_app.data.model.Article
+import com.kochipek.news_app.data.model.NewsApiResponse
 import com.kochipek.news_app.data.util.Resource
 import kotlinx.coroutines.flow.Flow
 
