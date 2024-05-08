@@ -3,6 +3,7 @@ import java.util.Properties
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
 }
 
 android {
@@ -49,6 +50,7 @@ android {
         buildConfig = true
     }
 }
+val lifeCycleVersion = "2.7.0"
 
 dependencies {
     // gson library
@@ -60,6 +62,9 @@ dependencies {
     // retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    // viewmodel and livedata
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifeCycleVersion")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifeCycleVersion")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
