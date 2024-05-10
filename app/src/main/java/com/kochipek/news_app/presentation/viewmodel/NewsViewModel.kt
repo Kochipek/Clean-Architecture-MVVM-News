@@ -12,11 +12,14 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class NewsViewModel @Inject constructor(private val getNewsUseCase: GetNewsUseCase) : ViewModel() {
-   private val news : MutableLiveData<Resource<NewsApiResponse>> = MutableLiveData()
-    private lateinit var networkHelper  : NetworkHelper
+class NewsViewModel @Inject constructor(
+    private val getNewsUseCase: GetNewsUseCase,
+    private val networkHelper: NetworkHelper
+) : ViewModel() {
+    internal val news: MutableLiveData<Resource<NewsApiResponse>> = MutableLiveData()
+
     fun getNews(country: String, page: Int) {
-        viewModelScope.launch{
+        viewModelScope.launch {
             news.postValue(Resource.Loading())
             if (networkHelper.isInternetAvailable()) {
                 try {
