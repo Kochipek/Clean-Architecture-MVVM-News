@@ -6,7 +6,7 @@ import com.kochipek.news_app.domain.repository.NewsRepository
 
 class GetSearchedNewsUseCase(private val newsRepository: NewsRepository) {
 
-    suspend fun execute(searchQuery: String) : Resource<NewsApiResponse> {
+    suspend operator fun invoke(searchQuery: String) : Resource<NewsApiResponse> {
         return newsRepository.getSearchedNews(searchQuery)
     }
 }

@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 interface NewsRepository {
 
     // Resource class is a wrapper class that will help me to handle the response status before the data is fetched
-    suspend fun getNews(country: String, page : Int) : Resource<List<NewsApiResponse>>
+    suspend fun getNews(country: String, page : Int) : Resource<NewsApiResponse>
     suspend fun getSearchedNews(searchQuery: String) : Resource<NewsApiResponse>
 
     // I will get the rest from local database

@@ -5,5 +5,5 @@ import com.kochipek.news_app.domain.repository.NewsRepository
 
 class GetNewsDetailsUseCase(private val newsRepository: NewsRepository) {
 
-    suspend fun execute(article: Article) = newsRepository.getNewsDetails(article)
+    suspend operator fun invoke(article: Article) = newsRepository.getNewsDetails(article)
 }
