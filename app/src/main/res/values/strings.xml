@@ -5,4 +5,11 @@
     <string name="feed_news_description" />
     <string name="publishedat" />
     <string name="source">source</string>
+    <string name="title_text">title text</string>
+    <string name="description_text">description_text</string>
+    <string name="date_text">date_text</string>
+    <string name="source_text">source_text</string>
+    <string name="go_to_source">Go to source</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="share" />
 </resources>

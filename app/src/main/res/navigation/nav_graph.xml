@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/newsFeedFragment"
         android:name="com.kochipek.news_app.presentation.feed.NewsFeedFragment"
-        android:label="fragment_news_feed"
+        android:label="Breaking News"
         tools:layout="@layout/fragment_news_feed" >
         <action
             android:id="@+id/action_newsFeedFragment_to_newsDetailsFragment"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/savedNewsFragment"
         android:name="com.kochipek.news_app.SavedNewsFragment"
-        android:label="fragment_saved_news"
+        android:label="Saved Articles"
         tools:layout="@layout/fragment_saved_news" >
         <action
             android:id="@+id/action_savedNewsFragment_to_newsDetailsFragment"
@@ -25,16 +25,19 @@
     </fragment>
     <fragment
         android:id="@+id/newsDetailsFragment"
-        android:name="com.kochipek.news_app.NewsDetailsFragment"
-        android:label="fragment_news_details"
+        android:name="com.kochipek.news_app.presentation.details.NewsDetailsFragment"
+        android:label="Details"
         tools:layout="@layout/fragment_news_details" >
         <action
             android:id="@+id/action_newsDetailsFragment_to_newsSourceFragment"
             app:destination="@id/newsSourceFragment" />
+        <argument
+            android:name="title"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/newsSourceFragment"
         android:name="com.kochipek.news_app.NewsSourceFragment"
-        android:label="fragment_news_source"
+        android:label="Source"
         tools:layout="@layout/fragment_news_source" />
 </navigation>
