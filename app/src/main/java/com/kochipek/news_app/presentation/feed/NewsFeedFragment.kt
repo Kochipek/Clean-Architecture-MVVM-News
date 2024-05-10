@@ -4,15 +4,17 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kochipek.news_app.R
 import com.kochipek.news_app.data.util.Resource
 import com.kochipek.news_app.databinding.FragmentNewsFeedBinding
-import com.kochipek.news_app.presentation.MainActivity
 import com.kochipek.news_app.presentation.viewmodel.NewsViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class NewsFeedFragment : Fragment(R.layout.fragment_news_feed) {
-    private lateinit var viewModel: NewsViewModel
+    private val viewModel: NewsViewModel by viewModels()
     private lateinit var newsAdapter: NewsFeedAdapter
     private lateinit var fragmentNewsFeedBinding: FragmentNewsFeedBinding
     private var country = "us"
@@ -21,7 +23,6 @@ class NewsFeedFragment : Fragment(R.layout.fragment_news_feed) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fragmentNewsFeedBinding = FragmentNewsFeedBinding.bind(view)
-        viewModel = (activity as MainActivity).viewModel
         initRecyclerView()
         viewNewsList()
     }
