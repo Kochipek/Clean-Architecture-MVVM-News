@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/newsFeedFragment"
+        android:icon="@drawable/baseline_newspaper_24"
+        android:title="Feed" />
+    <item
+        android:id="@+id/savedNewsFragment"
+        android:title="Saved News"
+        android:icon="@drawable/baseline_archive_24" />
+
+</menu>
