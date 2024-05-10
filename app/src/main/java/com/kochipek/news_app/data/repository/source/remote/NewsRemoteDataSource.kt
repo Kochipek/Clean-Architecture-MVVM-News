@@ -1,4 +1,4 @@
-package com.kochipek.news_app.data.source.remote
+package com.kochipek.news_app.data.repository.source.remote
 
 import com.kochipek.news_app.data.model.NewsApiResponse
 import retrofit2.Response

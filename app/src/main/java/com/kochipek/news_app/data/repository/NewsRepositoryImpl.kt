@@ -2,14 +2,15 @@ package com.kochipek.news_app.data.repository
 
 import com.kochipek.news_app.data.model.Article
 import com.kochipek.news_app.data.model.NewsApiResponse
-import com.kochipek.news_app.data.source.remote.NewsRemoteDataSource
+import com.kochipek.news_app.data.repository.source.remote.NewsRemoteDataSource
 import com.kochipek.news_app.data.util.Resource
 import com.kochipek.news_app.domain.repository.NewsRepository
 import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
+import javax.inject.Inject
 
-class NewsRepositoryImpl(
-    private val newsRemoteDataSource: NewsRemoteDataSource
+
+class NewsRepositoryImpl @Inject constructor(private val newsRemoteDataSource: NewsRemoteDataSource
 
 ) : NewsRepository {
 
