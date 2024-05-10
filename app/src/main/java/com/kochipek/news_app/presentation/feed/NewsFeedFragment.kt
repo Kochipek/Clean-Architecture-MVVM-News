@@ -15,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class NewsFeedFragment : Fragment(R.layout.fragment_news_feed) {
     private val viewModel: NewsViewModel by viewModels()
-    private lateinit var newsAdapter: NewsFeedAdapter
+    private val newsAdapter: NewsFeedAdapter by lazy { NewsFeedAdapter() }
     private lateinit var fragmentNewsFeedBinding: FragmentNewsFeedBinding
     private var country = "us"
     private var page = 1
@@ -55,7 +55,6 @@ class NewsFeedFragment : Fragment(R.layout.fragment_news_feed) {
     }
 
     private fun initRecyclerView() {
-        newsAdapter = NewsFeedAdapter()
         fragmentNewsFeedBinding.newsFeedRecyclerView.apply {
             adapter = newsAdapter
             layoutManager = LinearLayoutManager(requireContext())
