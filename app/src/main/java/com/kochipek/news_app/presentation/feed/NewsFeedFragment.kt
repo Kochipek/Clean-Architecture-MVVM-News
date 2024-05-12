@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.kochipek.news_app.R
 import com.kochipek.news_app.data.util.Resource
 import com.kochipek.news_app.databinding.FragmentNewsFeedBinding
-import com.kochipek.news_app.presentation.viewmodel.NewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

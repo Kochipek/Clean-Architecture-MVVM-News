@@ -1,4 +1,4 @@
-package com.kochipek.news_app.presentation.viewmodel
+package com.kochipek.news_app.presentation.feed
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
