@@ -25,6 +25,14 @@
             app:titleCentered="true"
             app:titleTextColor="@color/black" />
 
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/searchView"
+            android:queryHint="Search"
+            android:iconifiedByDefault="false"
+            android:queryBackground="@android:color/white" />
+
     </com.google.android.material.appbar.AppBarLayout>
     <ProgressBar
         android:id="@+id/progressBar"

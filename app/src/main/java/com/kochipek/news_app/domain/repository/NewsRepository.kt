@@ -9,7 +9,7 @@ interface NewsRepository {
 
     // Resource class is a wrapper class that will help me to handle the response status before the data is fetched
     suspend fun getNews(country: String, page : Int) : Resource<NewsApiResponse>
-    suspend fun getSearchedNews(searchQuery: String) : Resource<NewsApiResponse>
+    suspend fun getSearchedNews(searchQuery: String, page: Int): Resource<NewsApiResponse>
     suspend fun saveNews(article: Article)
     suspend fun deleteNews(article: Article)
     // Using Flow to get the data from the database asynchronously instead of using LiveData because LiveData is lifecycle aware and I'm not using it here.

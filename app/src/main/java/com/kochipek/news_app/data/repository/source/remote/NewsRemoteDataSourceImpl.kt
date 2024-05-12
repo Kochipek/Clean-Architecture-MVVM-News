@@ -15,4 +15,12 @@ class NewsRemoteDataSourceImpl @Inject constructor(
     ): Response<NewsApiResponse> {
         return newsApiService.getNews(country, page)
     }
+
+    override suspend fun getSearchedNews(
+
+        searchQuery: String,
+        page: Int,
+    ): Response<NewsApiResponse> {
+        return newsApiService.getSearchedNews(searchQuery, page)
+    }
 }

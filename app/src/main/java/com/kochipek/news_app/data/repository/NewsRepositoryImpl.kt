@@ -29,8 +29,11 @@ class NewsRepositoryImpl @Inject constructor(private val newsRemoteDataSource: N
         return responseToResource(newsRemoteDataSource.getNews(country, page))
     }
 
-    override suspend fun getSearchedNews(searchQuery: String): Resource<NewsApiResponse> {
-        TODO("Not yet implemented")
+    override suspend fun getSearchedNews(
+        searchQuery: String,
+        page: Int
+    ): Resource<NewsApiResponse> {
+        return responseToResource(newsRemoteDataSource.getSearchedNews(searchQuery, page))
     }
 
     override suspend fun saveNews(article: Article) {

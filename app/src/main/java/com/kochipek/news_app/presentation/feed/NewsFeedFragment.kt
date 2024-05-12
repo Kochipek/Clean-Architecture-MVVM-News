@@ -2,6 +2,7 @@ package com.kochipek.news_app.presentation.feed
 
 import android.os.Bundle
 import android.view.View
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -10,6 +11,7 @@ import com.kochipek.news_app.R
 import com.kochipek.news_app.data.util.Resource
 import com.kochipek.news_app.databinding.FragmentNewsFeedBinding
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class NewsFeedFragment : Fragment(R.layout.fragment_news_feed) {
@@ -24,6 +26,7 @@ class NewsFeedFragment : Fragment(R.layout.fragment_news_feed) {
         fragmentNewsFeedBinding = FragmentNewsFeedBinding.bind(view)
         initRecyclerView()
         viewNewsList()
+        setSearchedView()
     }
 
     private fun viewNewsList() {
@@ -44,7 +47,61 @@ class NewsFeedFragment : Fragment(R.layout.fragment_news_feed) {
                     it.message?.let { message ->
                         Toast.makeText(
                             requireContext(),
-                            "An error occured: $message",
+                            "An error occurred: $message",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+            }
+        }
+    }
+
+    private fun setSearchedView() {
+        fragmentNewsFeedBinding.searchView.setOnQueryTextListener(
+            object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    if (query != null) {
+                        viewModel.getSearchedNews(query, 1)
+                        searchNews()
+                    }
+                    return false
+                }
+
+                override fun onQueryTextChange(query: String?): Boolean {
+                    if (query != null) {
+                        viewModel.getSearchedNews(query, 1)
+                        searchNews()
+                    }
+                    return false
+                }
+            }
+        )
+
+        fragmentNewsFeedBinding.searchView.setOnCloseListener {
+            // initRecyclerView()
+            viewNewsList()
+            false
+        }
+    }
+
+    private fun searchNews() {
+        viewModel.searchedNews.observe(viewLifecycleOwner) {
+            when (it) {
+                is Resource.Loading -> {
+                    showProgressBar()
+                }
+
+                is Resource.Success -> {
+                    hideProgressBar()
+                    newsAdapter.differ.submitList(it.data?.articles)
+                }
+
+                is Resource.Error -> {
+                    hideProgressBar()
+                    it.message?.let { message ->
+                        Toast.makeText(
+                            requireContext(),
+                            "An error occurred: $message",
                             Toast.LENGTH_LONG
                         ).show()
                     }
