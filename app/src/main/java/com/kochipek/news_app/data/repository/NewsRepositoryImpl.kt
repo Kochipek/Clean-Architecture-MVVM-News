@@ -33,10 +33,6 @@ class NewsRepositoryImpl @Inject constructor(private val newsRemoteDataSource: N
         TODO("Not yet implemented")
     }
 
-    override suspend fun getNewsDetails(article: Article) {
-        TODO("Not yet implemented")
-    }
-
     override suspend fun saveNews(article: Article) {
         TODO("Not yet implemented")
     }

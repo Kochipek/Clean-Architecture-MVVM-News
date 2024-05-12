@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/savedNewsFragment"
-        android:name="com.kochipek.news_app.SavedNewsFragment"
+        android:name="com.kochipek.news_app.presentation.savedNews.SavedNewsFragment"
         android:label="Saved Articles"
         tools:layout="@layout/fragment_saved_news" >
         <action
@@ -32,12 +32,18 @@
             android:id="@+id/action_newsDetailsFragment_to_newsSourceFragment"
             app:destination="@id/newsSourceFragment" />
         <argument
-            android:name="title"
-            app:argType="string" />
+            android:name="selectedArticle"
+            app:argType="com.kochipek.news_app.data.model.Article" />
     </fragment>
     <fragment
         android:id="@+id/newsSourceFragment"
-        android:name="com.kochipek.news_app.NewsSourceFragment"
+        android:name="com.kochipek.news_app.presentation.webview.NewsSourceFragment"
         android:label="Source"
-        tools:layout="@layout/fragment_news_source" />
+        tools:layout="@layout/fragment_news_source">
+
+        <argument
+            android:name="url"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>

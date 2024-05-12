@@ -3,13 +3,14 @@ package com.kochipek.news_app.presentation
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
@@ -34,10 +35,15 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
         binding.bottomNavigation.setupWithNavController(navController)
+        // hide bottom navigation when on details fragment
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.newsDetailsFragment -> binding.bottomNavigation.isVisible = false
+                R.id.newsSourceFragment -> binding.bottomNavigation.isVisible = false
 
-        // toolbar
-        setSupportActionBar(findViewById(R.id.my_toolbar))
-        setupActionBarWithNavController(navController)
+                else -> binding.bottomNavigation.isVisible = true
+            }
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
