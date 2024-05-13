@@ -54,6 +54,8 @@ android {
 }
 val lifeCycleVersion = "2.7.0"
 val nav_version = "2.7.7"
+val room_version = "2.6.1"
+
 dependencies {
     // gson library
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
@@ -78,6 +80,12 @@ dependencies {
     kapt("com.github.bumptech.glide:compiler:4.12.0")
     // data store
     implementation("androidx.datastore:datastore-preferences:1.1.1")
+    // room
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
