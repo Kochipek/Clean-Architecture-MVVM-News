@@ -87,6 +87,12 @@ dependencies {
     kapt("androidx.room:room-compiler:$room_version")
     // skeleton
     implementation("com.faltenreich:skeletonlayout:5.0.0")
+    // truth
+    testImplementation("com.google.truth:truth:1.1.3")
+    // mockwebserver
+    testImplementation("com.squareup.okhttp3:mockwebserver:4.9.1")
+    // junit
+    testImplementation("junit:junit:4.13.2")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

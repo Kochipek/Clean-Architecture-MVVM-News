@@ -1,0 +1,266 @@
+{
+  "status": "ok",
+  "totalResults": 35,
+  "articles": [
+    {
+      "source": {
+        "id": "reuters",
+        "name": "Reuters"
+      },
+      "author": "Reuters",
+      "title": "Israel pushes back into northern Gaza, ups military pressure on Rafah - Reuters",
+      "description": null,
+      "url": "https://www.reuters.com/world/middle-east/israel-pushes-back-into-northern-gaza-ups-military-pressure-rafah-2024-05-12/",
+      "urlToImage": null,
+      "publishedAt": "2024-05-12T16:28:00Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "espn",
+        "name": "ESPN"
+      },
+      "author": "Greg Wyshynski",
+      "title": "With Brad Marchand out for Game 4, Bruins seek to avenge him - ESPN",
+      "description": "Bruins captain Brad Marchand is out for Game 4 of their series against the Panthers on Sunday night, and his teammates are looking to avenge him.",
+      "url": "https://www.espn.com/nhl/story/_/id/40131959/with-brad-marchand-game-4-bruins-seek-avenge-him",
+      "urlToImage": "https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2024%2F0512%2Fr1331919_1296x729_16%2D9.jpg",
+      "publishedAt": "2024-05-12T15:57:00Z",
+      "content": "BOSTON -- Bruins captain Brad Marchand is out for Game 4 of their series against the Florida Panthers on Sunday night, and his teammates are looking to avenge him.\r\n\"I think it pissed off everyone. I… [+3871 chars]"
+    },
+    {
+      "source": {
+        "id": "usa-today",
+        "name": "USA Today"
+      },
+      "author": "Brendan Morrow",
+      "title": "Roger Corman dead: 'Little Shop of Horrors' filmmaker dies at 98 - USA TODAY",
+      "description": "Roger Corman, the prolific director of B-movies who gave many prominent filmmakers their start, has died. He was 98.",
+      "url": "https://www.usatoday.com/story/entertainment/movies/2024/05/12/roger-corman-director-producer-dies-tributes/73662623007/",
+      "urlToImage": "https://www.usatoday.com/gcdn/authoring/authoring-images/2024/05/12/USAT/73662761007-afp-2152005745.jpg?crop=4763,2679,x0,y298&width=3200&height=1800&format=pjpg&auto=webp",
+      "publishedAt": "2024-05-12T15:01:43Z",
+      "content": "Roger Corman, the prolific director and producer of B-movies who gave numerous filmmakers and actors their start, has died. He was 98.\r\nCorman's death was confirmed in a statement shared early Saturd… [+3217 chars]"
+    },
+    {
+      "source": {
+        "id": "usa-today",
+        "name": "USA Today"
+      },
+      "author": "Anthony Robledo",
+      "title": "Watch as German police, protesters at Tesla factory clash in Berlin - USA TODAY",
+      "description": "Around 800 protesters clashed with police in Germany while trying to break into a Tesla factory. Elon Musk blamed 'left-wing' groups.",
+      "url": "https://www.usatoday.com/story/money/2024/05/10/berlin-tesla-factory-germany-protest-video/73649849007/",
+      "urlToImage": "https://www.usatoday.com/gcdn/authoring/authoring-images/2024/05/10/USAT/73648095007-tesla-protest.jpg?crop=1918,1078,x0,y0&width=1918&height=1078&format=pjpg&auto=webp",
+      "publishedAt": "2024-05-12T14:33:56Z",
+      "content": "Around 800 protesters clashed with police Friday in Germany while trying to break into a Tesla factory in a wooded area.\r\nThe protest was part of an effort to stop the planned expansion of the factor… [+1449 chars]"
+    },
+    {
+      "source": {
+        "id": "politico",
+        "name": "Politico"
+      },
+      "author": "POLITICO",
+      "title": "Blinken reiterates human rights findings on Israel - POLITICO",
+      "description": null,
+      "url": "https://www.politico.com/news/2024/05/12/blinken-reiterates-findings-israel-00157491",
+      "urlToImage": null,
+      "publishedAt": "2024-05-12T14:28:30Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "the-hill",
+        "name": "The Hill"
+      },
+      "author": "Addy Bink",
+      "title": "Does COVID vaccine protect against symptoms of new 'FLiRT' variants? - The Hill",
+      "description": "There are two new COVID-19 variants circulating, posing a threat to a summer surge. Is your last vaccine dose still protecting you?",
+      "url": "https://thehill.com/homenews/nexstar_media_wire/4653747-will-your-last-covid-vaccine-work-against-new-flirt-variants/",
+      "urlToImage": "https://thehill.com/wp-content/uploads/sites/2/2024/01/GettyImages-1302343877-e1705457354709.jpg?w=1280",
+      "publishedAt": "2024-05-12T14:18:00Z",
+      "content": "Skip to content\r\n(NEXSTAR) — There are two new COVID-19 variants circulating, posing a threat to a summer surge.\r\nThe Centers for Disease Control and Prevention has been tracking the new variants, sc… [+3648 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "New York Post"
+      },
+      "author": "Eric Todisco",
+      "title": "'SNL' host Maya Rudolph channels Beyoncé for spicy sketch and Mother's Day monologue - New York Post ",
+      "description": "Maya Rudolph revisited her beloved Beyoncé “Hot Ones” sketch on “SNL.”",
+      "url": "https://nypost.com/2024/05/12/entertainment/maya-rudolph-transforms-into-beyonce-for-hot-ones-on-snl/",
+      "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2024/05/newspress-collage-xiy543gs2-1715523793525.jpg?quality=75&strip=all&1715509466&w=1024",
+      "publishedAt": "2024-05-12T14:11:00Z",
+      "content": "Maya Rudolph has the Beyhive buzzing. \r\nThe comedian, 51, hosted “Saturday Night Live” last night and reprised her role as Beyoncé for another hilarious “Hot Ones” sketch. \r\nRudolph and Mikey Day, wh… [+2585 chars]"
+    },
+    {
+      "source": {
+        "id": "bloomberg",
+        "name": "Bloomberg"
+      },
+      "author": "Ryan Vlastelica",
+      "title": "Dividend Payouts Are Latest Sign of Big Tech's Financial Muscle - Bloomberg",
+      "description": "After years of chasing growth at all costs, tech firms are taking a page from the playbook of old-school value businesses — paying a dividend. Throwing off more cash than they can spend, the shift to a regular payout provides more evidence for the companies’ …",
+      "url": "https://www.bloomberg.com/news/articles/2024-05-12/dividend-payouts-are-latest-sign-of-big-tech-s-financial-muscle",
+      "urlToImage": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i00Ng5iOvqqI/v0/1200x800.jpg",
+      "publishedAt": "2024-05-12T14:00:00Z",
+      "content": "After years of chasing growth at all costs, tech firms are taking a page from the playbook of old-school value businesses paying a dividend. Throwing off more cash than they can spend, the shift to a… [+305 chars]"
+    },
+    {
+      "source": {
+        "id": "al-jazeera-english",
+        "name": "Al Jazeera English"
+      },
+      "author": null,
+      "title": "UC Berkeley chancellor speaks out about ‘Gaza brutality’ - Al Jazeera English",
+      "description": "Chancellor of UC Berkeley addressed the ‘brutality of the violence in Gaza’ in her graduation ceremony speech.",
+      "url": "https://www.aljazeera.com/program/newsfeed/2024/5/12/berkeley-chancellor-speaks-out-about-gaza-brutality-at-graduation",
+      "urlToImage": "https://www.aljazeera.com/wp-content/uploads/2024/05/UC-Berkeley-Gaza-Speech_WIDE-THUMB-CLEAN-1715519615.jpg?resize=1920%2C1080&quality=80",
+      "publishedAt": "2024-05-12T13:20:37Z",
+      "content": "NewsFeed\r\nThe chancellor of the University of California, Berkeley addressed the brutality of the violence in Gaza in her graduation ceremony speech, as dozens of students wearing keffiyehs waved Pal… [+116 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "The Athletic"
+      },
+      "author": "Jay King",
+      "title": "Jaylen Brown's pep talk fuels Celtics in Game 3: 'We're not here to play around' - The Athletic",
+      "description": "\"We didn't come to Cleveland for the weather, so let's go,\" says Jaylen Brown.",
+      "url": "https://theathletic.com/5487263/2024/05/12/celtics-jaylen-brown-cavaliers-game-3-win/",
+      "urlToImage": "https://cdn.theathletic.com/app/uploads/2024/05/12074722/GettyImages-2152528717-scaled.jpg",
+      "publishedAt": "2024-05-12T13:04:19Z",
+      "content": "CLEVELAND Jaylen Brown grabbed some of his teammates by the shoulder during pregame layup lines Saturday night. In a tied series, he recognized the Boston Celtics didnt have room for another dud. Mak… [+7399 chars]"
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Radina Gigova",
+      "title": "Ukraine warns northern front has ‘significantly worsened’ as Russia claims capture of several villages - CNN",
+      "description": "Russia’s Ministry of Defense claims to have captured five villages in the Kharkiv Region on the border with Ukraine, while Ukrainian authorities have disputed this and say the “fighting continues.”",
+      "url": "https://www.cnn.com/2024/05/12/europe/russia-kharkiv-region-offensive-ukraine-intl/index.html",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-1247591471.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2024-05-12T13:00:00Z",
+      "content": "Ukraine warned the situation in the northern Kharkiv region has significantly worsened after Russia claimed to have captured several villages in a surprise cross-border offensive.\r\nRussia on Sunday s… [+3334 chars]"
+    },
+    {
+      "source": {
+        "id": "the-hill",
+        "name": "The Hill"
+      },
+      "author": "Lauren Sforza",
+      "title": "Trump heightens attacks against NY prosecutor, Biden at Jersey Shore rally - The Hill",
+      "description": "Former President Trump ramped up his attacks on Manhattan District Attorney Alvin Bragg (D) and President Biden at his latest rally at the Jersey Shore on Saturday.   Trump repeatedly railed against the hush money case being brought against him in New York an…",
+      "url": "https://thehill.com/homenews/campaign/4658913-trump-heightens-attacks-against-ny-prosecutor-biden-at-jersey-shore-rally/",
+      "urlToImage": "https://thehill.com/wp-content/uploads/sites/2/2024/05/AP24133009758539.jpg?w=1280",
+      "publishedAt": "2024-05-12T12:40:00Z",
+      "content": "Skip to content\r\nFormer President Trump ramped up his attacks on Manhattan District Attorney Alvin Bragg (D) and President Biden at his latest rally at the Jersey Shore on Saturday.  \r\nTrump repeated… [+2438 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC News"
+      },
+      "author": null,
+      "title": "UK ban on selling arms to Israel would strengthen Hamas, says Cameron - BBC.com",
+      "description": "Foreign Secretary David Cameron tells the BBC the UK should focus on getting humanitarian aid into Gaza.",
+      "url": "https://www.bbc.com/news/uk-politics-68999212",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/1110C/production/_133300996_9b1f6862c9bc7d72bbcc4f1c26fd01ec811ba450.jpg",
+      "publishedAt": "2024-05-12T12:31:09Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Wccftech"
+      },
+      "author": "Ali Salman",
+      "title": "How iPadOS Is Dragging The OLED iPad Pro Down To The Level Of The Budget iPads - Wccftech",
+      "description": "New OLED iPad Pro models are great, but iPadOS is holding back its potential to become a full-fledged computer and Apple needs to take note.",
+      "url": "https://wccftech.com/ipados-holding-oled-ipad-pro-back/",
+      "urlToImage": "https://cdn.wccftech.com/wp-content/uploads/2024/05/OLED-iPad-Prp-title-2-e1715513953979.jpg",
+      "publishedAt": "2024-05-12T11:56:00Z",
+      "content": "Apple's new OLED iPad Pro is the company's thinnest device yet, beating the iPod nano. With the latest upgrades, the company could retain the numbers that it lost last year. However, demand for the O… [+2535 chars]"
+    },
+    {
+      "source": {
+        "id": "usa-today",
+        "name": "USA Today"
+      },
+      "author": "Mike Snider",
+      "title": "Apple apologizes for 'Crush' iPad Pro ad after creators react - USA TODAY",
+      "description": "Apple's recent video ad posted on YouTube and social media promoting its new iPad Pro struck some in the creative community as insensitive.",
+      "url": "https://www.usatoday.com/story/tech/2024/05/10/crush-apple-ipad-ad-apology/73646375007/",
+      "urlToImage": "https://www.usatoday.com/gcdn/authoring/authoring-images/2024/05/10/USAT/73647563007-applei-pad-prospaceblack-2-up-240507.jpg?crop=1958,1100,x0,y0&width=1958&height=1100&format=pjpg&auto=webp",
+      "publishedAt": "2024-05-12T11:55:45Z",
+      "content": "Apple's latest advertisement crushed it and not in a good way.\r\nThe 1-minute ad meant to highlight the thinness of the new iPad Pro touched a nerve among some in the creative community maybe because … [+4028 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "[Removed]"
+      },
+      "author": null,
+      "title": "[Removed]",
+      "description": "[Removed]",
+      "url": "https://removed.com",
+      "urlToImage": null,
+      "publishedAt": "1970-01-01T00:00:00Z",
+      "content": "[Removed]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "9to5google.com"
+      },
+      "author": "Abner Li",
+      "title": "Google Wallet dropping support for old Android, Wear OS versions - 9to5Google",
+      "description": "Starting next month, Google is increasing the minimum OS version for Wallet on Android phones and Wear OS with security cited as the reason.",
+      "url": "http://9to5google.com/2024/05/12/google-wallet-android-wear-os/",
+      "urlToImage": "https://i0.wp.com/9to5google.com/wp-content/uploads/sites/4/2023/03/google-wallet-logo-2.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+      "publishedAt": "2024-05-12T11:30:00Z",
+      "content": "Starting next month, Google is increasing the minimum OS version for Wallet on Android devices and Wear OS with security cited as the reason.\r\nAccording to a new support document, “Google Wallet will… [+1051 chars]"
+    },
+    {
+      "source": {
+        "id": "associated-press",
+        "name": "Associated Press"
+      },
+      "author": "JENNIFER PELTZ, ERIC TUCKER",
+      "title": "Michael Cohen: A challenging star witness in Donald Trump's hush money trial - The Associated Press",
+      "description": "Michael Cohen is the most central witness for prosecutors in former President Donald Trump's hush money trial. But Trump’s fixer-turned-foe is also as challenging a star witness as they come. He's expected to take the stand on Monday and offer jurors an insid…",
+      "url": "https://apnews.com/article/trump-hush-money-trial-michael-cohen-witness-091b0e50af2738eb261f395e9d658505",
+      "urlToImage": "https://dims.apnews.com/dims4/default/07dc90e/2147483647/strip/true/crop/6402x3601+0+334/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F2d%2F74%2F29e008f67af72510aa7e3f30768f%2F8d4808a87c68461daa413b0c2104f95c",
+      "publishedAt": "2024-05-12T11:21:00Z",
+      "content": "NEW YORK (AP) He once said he would take a bullet for Donald Trump. Now Michael Cohen is prosecutors biggest piece of legal ammunition in the former presidents hush money trial.\r\nBut if Trumps fixer-… [+9628 chars]"
+    },
+    {
+      "source": {
+        "id": "fortune",
+        "name": "Fortune"
+      },
+      "author": "Sasha Rogelberg",
+      "title": "Viking founder Torstein Hagen on the luxury cruise line specifically for baby boomers - Fortune",
+      "description": "Torstein Hagen, who founded Viking 27 years ago, said he owes the company’s success in part to its “cookie cutter” philosophy.",
+      "url": "https://fortune.com/2024/05/12/viking-cruises-torstein-hagen-luxury-baby-boomers/",
+      "urlToImage": "https://fortune.com/img-assets/wp-content/uploads/2024/05/GettyImages-802694328-e1715371275644.jpg?resize=1200,600",
+      "publishedAt": "2024-05-12T11:17:00Z",
+      "content": "A veteran cruise attendee at just 24 years old, Julia Wilcox is used to her inbox flooding with promotional emails from cruise lines courting loyal customers. But Wilcox, who vlogs her cruise experie… [+7039 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "[Removed]"
+      },
+      "author": null,
+      "title": "[Removed]",
+      "description": "[Removed]",
+      "url": "https://removed.com",
+      "urlToImage": null,
+      "publishedAt": "1970-01-01T00:00:00Z",
+      "content": "[Removed]"
+    }
+  ]
+}
