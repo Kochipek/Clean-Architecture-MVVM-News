@@ -25,7 +25,7 @@
             app:navigationIcon="@drawable/angleleft_24"
             app:title="Source"
             app:titleCentered="true"
-            app:titleTextColor="@color/black" />
+            app:titleTextColor="@color/color_primary" />
 
     </com.google.android.material.appbar.AppBarLayout>
     <WebView

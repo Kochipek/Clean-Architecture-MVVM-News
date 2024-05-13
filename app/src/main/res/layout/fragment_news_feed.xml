@@ -23,22 +23,22 @@
             android:background="#006750A4"
             app:title="Appcent News App"
             app:titleCentered="true"
-            app:titleTextColor="@color/black" />
+            app:titleTextColor="@color/color_primary" />
 
         <SearchView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/searchView"
             android:queryHint="Search"
-            android:iconifiedByDefault="false"
-            android:queryBackground="@android:color/white" />
+            android:queryBackground="@null"
+            android:iconifiedByDefault="false" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <ImageView
         android:id="@+id/empty_result_image"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:src="@drawable/empty_result_shot"
         android:visibility="gone" />
 

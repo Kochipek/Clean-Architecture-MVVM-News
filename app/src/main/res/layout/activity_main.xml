@@ -23,12 +23,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:itemActiveIndicatorStyle="@style/Theme.BottomNavigationView.ActiveIndicator"
+        app:itemTextAppearanceActive="@style/Theme.BottomNavigationView.ActiveIndicator"
+        app:itemTextAppearanceActiveBoldEnabled="true"
         app:itemIconTint="@color/bottom_navigation_color"
         app:itemTextColor="@color/bottom_navigation_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_menu"
-        android:background="@color/white" />
+        app:layout_constraintHeight_percent="0.1"
+        android:background="#00FFFFFF" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,7 +23,7 @@
             app:navigationIcon="@drawable/angleleft_24"
             app:title="Details"
             app:titleCentered="true"
-            app:titleTextColor="@color/black" />
+            app:titleTextColor="@color/color_primary" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -105,9 +105,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:src="@drawable/globe_24"
+        app:fabSize="normal"
+        app:tint="@color/color_gray"
         android:contentDescription="@string/go_to_source"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:backgroundTint="#FFBB58" />
+        app:backgroundTint="#1E2C3F" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

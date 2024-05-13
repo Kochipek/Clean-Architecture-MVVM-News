@@ -22,12 +22,49 @@
             android:layout_height="?attr/actionBarSize"
             android:background="#006750A4"
             app:navigationIcon="@drawable/angleleft_24"
-            app:title="Saved News"
+            app:title="Bookmarks"
             app:titleCentered="true"
-            app:titleTextColor="@color/black" />
+            app:titleTextColor="@color/color_primary" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <LinearLayout
+        android:id="@+id/empty_result_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/empty_result_image"
+            android:layout_width="217dp"
+            android:layout_height="194dp"
+            android:src="@drawable/empty_box"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/empty_result_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No saved news found"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#B7F57C00"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/empty_result_text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Try to save news by clicking the
+             bookmark icon"
+            android:textColor="#9F9F9F"
+            android:textSize="20sp" />
+    </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/saved_news_feed_recycler_view"
         android:layout_width="match_parent"

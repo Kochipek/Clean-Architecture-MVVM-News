@@ -58,7 +58,7 @@ class SavedNewsFragment : Fragment(), NewsFeedAdapter.NewsItemClickListener {
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                val position = viewHolder.adapterPosition
+                val position = viewHolder.bindingAdapterPosition
                 val article = savedNewsAdapter.differ.currentList[position]
                 viewModel.deleteArticle(article)
                 Snackbar.make(requireView(), "Article deleted", Snackbar.LENGTH_LONG).apply {
@@ -68,6 +68,7 @@ class SavedNewsFragment : Fragment(), NewsFeedAdapter.NewsItemClickListener {
                     show()
                 }
             }
+
         })
 
         itemTouchHelper.attachToRecyclerView(binding.savedNewsFeedRecyclerView)
@@ -76,6 +77,11 @@ class SavedNewsFragment : Fragment(), NewsFeedAdapter.NewsItemClickListener {
     private fun observeViewModel() {
         viewModel.getSavedNews().observe(viewLifecycleOwner) { articles ->
             savedNewsAdapter.differ.submitList(articles)
+            if (articles.isEmpty()) {
+                binding.emptyResultLayout.visibility = View.VISIBLE
+            } else {
+                binding.emptyResultLayout.visibility = View.GONE
+            }
         }
     }
 
