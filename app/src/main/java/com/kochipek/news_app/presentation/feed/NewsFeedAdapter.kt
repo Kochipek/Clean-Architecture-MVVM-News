@@ -2,16 +2,19 @@ package com.kochipek.news_app.presentation.feed
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.kochipek.news_app.R
 import com.kochipek.news_app.data.model.Article
 import com.kochipek.news_app.databinding.NewsListItemBinding
 import java.text.SimpleDateFormat
 import java.util.Locale
 
-class NewsFeedAdapter : RecyclerView.Adapter<NewsFeedAdapter.NewsViewHolder>() {
+class NewsFeedAdapter(private val listener: NewsItemClickListener) :
+    RecyclerView.Adapter<NewsFeedAdapter.NewsViewHolder>() {
 
     private val diffCallback = DiffCallback()
     internal val differ = AsyncListDiffer(this, diffCallback)
@@ -26,7 +29,9 @@ class NewsFeedAdapter : RecyclerView.Adapter<NewsFeedAdapter.NewsViewHolder>() {
         val article = differ.currentList.getOrNull(position)
         article?.let { holder.bind(it) }
     }
-
+    interface NewsItemClickListener {
+        fun onNewsItemClicked(article: Article)
+    }
     override fun getItemCount(): Int = differ.currentList.size
 
     inner class NewsViewHolder(private val binding: NewsListItemBinding) :
@@ -37,18 +42,17 @@ class NewsFeedAdapter : RecyclerView.Adapter<NewsFeedAdapter.NewsViewHolder>() {
                 tvTitle.text = article.title.orEmpty()
                 tvPublisherTime.text = formatDate(article.publishedAt)
                 tvSource.text = article.source?.name.orEmpty()
-                Glide.with(imgCover.context).load(article.urlToImage).into(imgCover)
+                Glide.with(imgCover.context)
+                    .load(article.urlToImage)
+                    .error(R.drawable.no_image_found)
+                    .into(imgCover)
 
                 itemView.setOnClickListener {
-                    val action =
-                        NewsFeedFragmentDirections.actionNewsFeedFragmentToNewsDetailsFragment(
-                            article
-                        )
-                    Navigation.findNavController(it).navigate(action)
+                    val article = differ.currentList[bindingAdapterPosition]
+                    listener.onNewsItemClicked(article)
                 }
             }
         }
-
         private fun formatDate(dateString: String?): String {
             val dateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault())
             val parsedDate = dateString?.let { dateFormat.parse(it) }
