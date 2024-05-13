@@ -18,10 +18,11 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 
 @AndroidEntryPoint
-class NewsDetailsFragment : Fragment(R.layout.fragment_news_details) {
+class NewsDetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentNewsDetailsBinding
     private val viewModel: NewsDetailsViewModel by viewModels()
+    private lateinit var article: Article
     private var isBookmarked = false
 
     override fun onCreateView(
@@ -35,46 +36,60 @@ class NewsDetailsFragment : Fragment(R.layout.fragment_news_details) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.articleDetails.observe(viewLifecycleOwner) { article ->
-            updateUI(article)
-        }
+        setupUI()
+        observeViewModel()
+    }
 
-        val args = NewsDetailsFragmentArgs.fromBundle(requireArguments())
-        val article = args.selectedArticle
-        viewModel.fetchNewsDetails(article)
-
+    private fun setupUI() {
         binding.topAppBar.setNavigationOnClickListener {
             findNavController().navigateUp()
         }
-        enableShareButton()
+        binding.topAppBar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.share -> {
+                    shareArticle()
+                    true
+                }
 
-        viewModel.getSavedNews().observe(viewLifecycleOwner) { savedArticles ->
-            isBookmarked = savedArticles.any { it.url == article.url }
-            updateBookmarkButton(isBookmarked)
-        }
+                R.id.save -> {
+                    if (isBookmarked) {
+                        viewModel.deleteArticle(article)
+                    } else {
+                        viewModel.saveArticle(article)
+                        Snackbar.make(binding.root, "Article saved", Snackbar.LENGTH_SHORT).show()
+                    }
+                    isBookmarked = !isBookmarked
+                    updateBookmarkButton(isBookmarked)
+                    true
+                }
 
-        binding.topAppBar.setOnMenuItemClickListener {
-            if (isBookmarked) {
-                viewModel.deleteArticle(article)
-            } else {
-                viewModel.saveArticle(article)
+                else -> false
             }
-            isBookmarked = !isBookmarked
-            updateBookmarkButton(isBookmarked)
         }
+    }
+
+    private fun observeViewModel() {
+        viewModel.articleDetails.observe(viewLifecycleOwner) { article ->
+            this.article = article
+            updateUI(article)
+            viewModel.getSavedNews().observe(viewLifecycleOwner) { savedArticles ->
+                isBookmarked = savedArticles.any { it.url == article.url }
+                updateBookmarkButton(isBookmarked)
+            }
+        }
+
+        val args = NewsDetailsFragmentArgs.fromBundle(requireArguments())
+        viewModel.fetchNewsDetails(args.selectedArticle)
     }
 
     private fun updateUI(article: Article) {
         binding.apply {
             articleTitle.text = article.title
             articleDescription.text = article.description
-            // format date
             val dateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault())
             val parsedDate = article.publishedAt?.let { dateFormat.parse(it) }
             val formattedDate = parsedDate?.let {
-                SimpleDateFormat("dd MMM, yyyy", Locale.getDefault()).format(
-                    it
-                )
+                SimpleDateFormat("dd MMM, yyyy", Locale.getDefault()).format(it)
             }
             date.text = formattedDate
             articleSource.text = article.source?.name
@@ -83,59 +98,28 @@ class NewsDetailsFragment : Fragment(R.layout.fragment_news_details) {
                 .into(articleImage)
 
             goToSourceFab.setOnClickListener {
-                val action =
-                    NewsDetailsFragmentDirections.actionNewsDetailsFragmentToNewsSourceFragment(
-                        article.url
-                    )
+                val action = NewsDetailsFragmentDirections
+                    .actionNewsDetailsFragmentToNewsSourceFragment(article.url)
                 findNavController().navigate(action)
             }
         }
     }
 
-    private fun enableShareButton() {
-        binding.topAppBar.setOnMenuItemClickListener {
-            when (it.itemId) {
-                R.id.share -> {
-                    shareArticle()
-                    true
-                }
-                R.id.save -> {
-                    saveArticle()
-                    true
-                }
-                else -> false
-            }
-        }
-    }
-
     private fun shareArticle() {
-        val article = viewModel.articleDetails.value
-        if (article != null) {
-            val sendIntent = Intent().apply {
-                action = Intent.ACTION_SEND
-                putExtra(Intent.EXTRA_TEXT, article.url)
-                type = "text/plain"
-            }
-            val shareIntent = Intent.createChooser(sendIntent, null)
-            startActivity(shareIntent)
+        val sendIntent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, article.url)
+            type = "text/plain"
         }
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        startActivity(shareIntent)
     }
 
-    private fun saveArticle() {
-        val article = viewModel.articleDetails.value
-        if (article != null) {
-            viewModel.saveArticle(article)
-            Snackbar.make(binding.root, "Article saved", Snackbar.LENGTH_LONG).show()
-        }
-    }
-
-
-    private fun updateBookmarkButton(isFavorite: Boolean): Boolean {
+    private fun updateBookmarkButton(isFavorite: Boolean) {
         if (isFavorite) {
             binding.topAppBar.menu.findItem(R.id.save)?.setIcon(R.drawable.saved_bookmark_24)
         } else {
             binding.topAppBar.menu.findItem(R.id.save)?.setIcon(R.drawable.bookmark_24)
         }
-        return true
     }
 }
