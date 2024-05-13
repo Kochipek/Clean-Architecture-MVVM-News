@@ -1,7 +1,7 @@
 
 # 📰 News App
 
-This App is developed as a learning project to get into Android development using Java. It serves as a practical exploration of various essential technologies and patterns commonly used in Android app development.
+This application allows users to search for news articles using the NewsAPI and view details of each article. Users can also bookmark articles to view later.
 
 ## 🏆 Features
  - Search: Users can search for news articles by entering keywords in the search bar.
