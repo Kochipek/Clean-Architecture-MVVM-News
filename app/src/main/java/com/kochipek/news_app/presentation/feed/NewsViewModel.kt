@@ -19,11 +19,9 @@ class NewsViewModel @Inject constructor(
     private val getSearchedNewsUseCase: GetSearchedNewsUseCase,
     private val networkHelper: NetworkHelper
 ) : ViewModel() {
+
     private val _news: MutableLiveData<Resource<NewsApiResponse>> = MutableLiveData()
     val news: LiveData<Resource<NewsApiResponse>> = _news
-
-    private val _searchedNews: MutableLiveData<Resource<NewsApiResponse>> = MutableLiveData()
-    val searchedNews: LiveData<Resource<NewsApiResponse>> = _searchedNews
 
     fun getNews(country: String, page: Int) {
         viewModelScope.launch {
@@ -43,16 +41,16 @@ class NewsViewModel @Inject constructor(
 
     fun getSearchedNews(searchQuery: String, page: Int) {
         viewModelScope.launch {
-            _searchedNews.postValue(Resource.Loading())
+            _news.postValue(Resource.Loading())
             if (networkHelper.isInternetAvailable()) {
                 try {
                     val response = getSearchedNewsUseCase(searchQuery, page)
-                    _searchedNews.postValue(response)
+                    _news.postValue(response)
                 } catch (e: Exception) {
-                    _searchedNews.postValue(Resource.Error("Something went wrong"))
+                    _news.postValue(Resource.Error("Something went wrong"))
                 }
             } else {
-                _searchedNews.postValue(Resource.Error("Internet is not available"))
+                _news.postValue(Resource.Error("Internet is not available"))
             }
         }
     }

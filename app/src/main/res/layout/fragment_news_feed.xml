@@ -34,12 +34,12 @@
             android:queryBackground="@android:color/white" />
 
     </com.google.android.material.appbar.AppBarLayout>
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
+
+    <ImageView
+        android:id="@+id/empty_result_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/empty_result_shot"
         android:visibility="gone" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -47,5 +47,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp" />
+
 
 </LinearLayout>
