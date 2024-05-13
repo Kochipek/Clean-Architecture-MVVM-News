@@ -2,6 +2,7 @@ package com.kochipek.news_app.data.repository
 
 import com.kochipek.news_app.data.model.Article
 import com.kochipek.news_app.data.model.NewsApiResponse
+import com.kochipek.news_app.data.repository.source.local.NewsLocalDataSource
 import com.kochipek.news_app.data.repository.source.remote.NewsRemoteDataSource
 import com.kochipek.news_app.data.util.Resource
 import com.kochipek.news_app.domain.repository.NewsRepository
@@ -10,8 +11,9 @@ import retrofit2.Response
 import javax.inject.Inject
 
 
-class NewsRepositoryImpl @Inject constructor(private val newsRemoteDataSource: NewsRemoteDataSource
-
+class NewsRepositoryImpl @Inject constructor(
+    private val newsRemoteDataSource: NewsRemoteDataSource,
+    private val newsLocalDataSource: NewsLocalDataSource
 ) : NewsRepository {
 
     // I converted the Response from retrofit to Resource type  ( which I have created) so that I can handle the response in the view model with the help of Resource class
@@ -37,14 +39,14 @@ class NewsRepositoryImpl @Inject constructor(private val newsRemoteDataSource: N
     }
 
     override suspend fun saveNews(article: Article) {
-        TODO("Not yet implemented")
+        return newsLocalDataSource.saveNewsToDatabase(article)
     }
 
     override suspend fun deleteNews(article: Article) {
-        TODO("Not yet implemented")
+        return newsLocalDataSource.deleteNewsFromDatabase(article)
     }
 
     override fun getSavedNews(): Flow<List<Article>> {
-        TODO("Not yet implemented")
+        return newsLocalDataSource.getSavedNews()
     }
 }

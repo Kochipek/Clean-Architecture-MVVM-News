@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.google.android.material.snackbar.Snackbar
 import com.kochipek.news_app.R
 import com.kochipek.news_app.data.model.Article
 import com.kochipek.news_app.databinding.FragmentNewsDetailsBinding
@@ -21,7 +22,7 @@ class NewsDetailsFragment : Fragment(R.layout.fragment_news_details) {
 
     private lateinit var binding: FragmentNewsDetailsBinding
     private val viewModel: NewsDetailsViewModel by viewModels()
-
+    private var isBookmarked = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,6 +47,21 @@ class NewsDetailsFragment : Fragment(R.layout.fragment_news_details) {
             findNavController().navigateUp()
         }
         enableShareButton()
+
+        viewModel.getSavedNews().observe(viewLifecycleOwner) { savedArticles ->
+            isBookmarked = savedArticles.any { it.url == article.url }
+            updateBookmarkButton(isBookmarked)
+        }
+
+        binding.topAppBar.setOnMenuItemClickListener {
+            if (isBookmarked) {
+                viewModel.deleteArticle(article)
+            } else {
+                viewModel.saveArticle(article)
+            }
+            isBookmarked = !isBookmarked
+            updateBookmarkButton(isBookmarked)
+        }
     }
 
     private fun updateUI(article: Article) {
@@ -72,7 +88,6 @@ class NewsDetailsFragment : Fragment(R.layout.fragment_news_details) {
                         article.url
                     )
                 findNavController().navigate(action)
-
             }
         }
     }
@@ -84,7 +99,10 @@ class NewsDetailsFragment : Fragment(R.layout.fragment_news_details) {
                     shareArticle()
                     true
                 }
-
+                R.id.save -> {
+                    saveArticle()
+                    true
+                }
                 else -> false
             }
         }
@@ -92,12 +110,32 @@ class NewsDetailsFragment : Fragment(R.layout.fragment_news_details) {
 
     private fun shareArticle() {
         val article = viewModel.articleDetails.value
-        val sendIntent = Intent().apply {
-            action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT, article?.url)
-            type = "text/plain"
+        if (article != null) {
+            val sendIntent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, article.url)
+                type = "text/plain"
+            }
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            startActivity(shareIntent)
         }
-        val shareIntent = Intent.createChooser(sendIntent, null)
-        startActivity(shareIntent)
+    }
+
+    private fun saveArticle() {
+        val article = viewModel.articleDetails.value
+        if (article != null) {
+            viewModel.saveArticle(article)
+            Snackbar.make(binding.root, "Article saved", Snackbar.LENGTH_LONG).show()
+        }
+    }
+
+
+    private fun updateBookmarkButton(isFavorite: Boolean): Boolean {
+        if (isFavorite) {
+            binding.topAppBar.menu.findItem(R.id.save)?.setIcon(R.drawable.saved_bookmark_24)
+        } else {
+            binding.topAppBar.menu.findItem(R.id.save)?.setIcon(R.drawable.bookmark_24)
+        }
+        return true
     }
 }
