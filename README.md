@@ -1,9 +1,9 @@
 
-# News App
+# 📰 News App
 
 This App is developed as a learning project to get into Android development using Java. It serves as a practical exploration of various essential technologies and patterns commonly used in Android app development.
 
-## Features
+## 🏆 Features
  - Search: Users can search for news articles by entering keywords in the search bar.
  - Article Details: Users can view detailed information about each article, including the title, description, date, and source.
  - External Link: Users can visit the source website of an article by clicking on the "Go to Source" button.
@@ -13,7 +13,7 @@ This App is developed as a learning project to get into Android development usin
  - Swipe to delete items: Users can delete saved news articles by swiping left or right on the item in the Saved News page.
 
 
-## Tech Stack
+## 👩🏻‍💻 Tech Stack
 
 **MVVM** : MVVM architecture pattern is used to separate the presentation layer from the business logic.
 
@@ -44,7 +44,7 @@ This App is developed as a learning project to get into Android development usin
 **Skeleton Loading** : Skeleton Layout is used to show loading placeholders while content is loading.
 
 
-## Screenshots
+## 📱 Screenshots
 ### The logo used in this application has been created by AI.
 | Splash       | Skeleton Loading         | Feed       |
 | ------------- |:-------------:| -----:|
@@ -62,3 +62,10 @@ This App is developed as a learning project to get into Android development usin
 | <img src="screenshots/savedScreen.png" width="300px"> </img>      | <img src="screenshots/emptySaved.png" width="300px"> </img> |<img src="screenshots/search.png" width="300px"> </img> |
 
 
+## 🔒 Security
+
+This application incorporates the following security measures to ensure the safety of sensitive data:
+
+Storage of Secret Keys: Secret keys are stored in the gradle.properties file of the application. This file is treated with special care within the project.
+
+Usage of Proguard: The application is compiled using Proguard. This is a measure for code optimization and obfuscation, aiding in the protection of sensitive information from malicious use.
