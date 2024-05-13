@@ -62,8 +62,3 @@ This App is developed as a learning project to get into Android development usin
 | <img src="screenshots/savedScreen.png" width="300px"> </img>      | <img src="screenshots/emptySaved.png" width="300px"> </img> |<img src="screenshots/search.png" width="300px"> </img> |
 
 
-| Empty Search |
-| ------------- |
-| <img src="screenshots/emptysearch.png" width="300px"> </img> |
-
-
