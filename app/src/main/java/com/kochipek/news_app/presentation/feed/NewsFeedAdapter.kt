@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.AdapterView
 import androidx.navigation.Navigation
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -14,7 +15,7 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 
 class NewsFeedAdapter(private val listener: NewsItemClickListener) :
-    RecyclerView.Adapter<NewsFeedAdapter.NewsViewHolder>() {
+    PagingDataAdapter<Article, NewsFeedAdapter.NewsViewHolder>(DiffCallback()) {
 
     private val diffCallback = DiffCallback()
     internal val differ = AsyncListDiffer(this, diffCallback)

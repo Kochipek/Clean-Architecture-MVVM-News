@@ -93,6 +93,9 @@ dependencies {
     testImplementation("com.squareup.okhttp3:mockwebserver:4.9.1")
     // junit
     testImplementation("junit:junit:4.13.2")
+    // paging
+    implementation("androidx.paging:paging-runtime:3.2.1")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

@@ -6,6 +6,7 @@ import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.faltenreich.skeletonlayout.Skeleton
@@ -15,6 +16,9 @@ import com.kochipek.news_app.data.model.Article
 import com.kochipek.news_app.data.util.Resource
 import com.kochipek.news_app.databinding.FragmentNewsFeedBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
+
 @AndroidEntryPoint
 class NewsFeedFragment : Fragment(R.layout.fragment_news_feed),
     NewsFeedAdapter.NewsItemClickListener {
@@ -34,7 +38,11 @@ class NewsFeedFragment : Fragment(R.layout.fragment_news_feed),
         skeleton =
             fragmentNewsFeedBinding.newsFeedRecyclerView.applySkeleton(R.layout.news_list_item)
         skeleton.showSkeleton()
-
+        lifecycleScope.launch {
+            viewModel.getNewsPaging(country).collectLatest { pagingData ->
+                newsAdapter.submitData(pagingData)
+            }
+        }
     }
 
     private fun viewNewsList() {

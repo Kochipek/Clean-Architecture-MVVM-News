@@ -1,5 +1,6 @@
 package com.kochipek.news_app.domain.repository
 
+import androidx.paging.PagingData
 import com.kochipek.news_app.data.model.Article
 import com.kochipek.news_app.data.model.NewsApiResponse
 import com.kochipek.news_app.data.util.Resource
@@ -15,5 +16,6 @@ interface NewsRepository {
     // Using Flow to get the data from the database asynchronously instead of using LiveData because LiveData is lifecycle aware and I'm not using it here.
     // That may cause threading issues
     fun getSavedNews() : Flow<List<Article>>
+    fun getNewsPaging(country: String): Flow<PagingData<Article>>
 
 }

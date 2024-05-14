@@ -1,7 +1,11 @@
 package com.kochipek.news_app.data.repository
 
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
 import com.kochipek.news_app.data.model.Article
 import com.kochipek.news_app.data.model.NewsApiResponse
+import com.kochipek.news_app.data.paging.NewsPagingSource
 import com.kochipek.news_app.data.repository.source.local.NewsLocalDataSource
 import com.kochipek.news_app.data.repository.source.remote.NewsRemoteDataSource
 import com.kochipek.news_app.data.util.Resource
@@ -48,5 +52,15 @@ class NewsRepositoryImpl @Inject constructor(
 
     override fun getSavedNews(): Flow<List<Article>> {
         return newsLocalDataSource.getSavedNews()
+    }
+    override fun getNewsPaging(country: String): Flow<PagingData<Article>> {
+        return Pager(
+            config = PagingConfig(pageSize = PAGE_SIZE, enablePlaceholders = false),
+            pagingSourceFactory = { NewsPagingSource(newsRemoteDataSource, country) }
+        ).flow
+    }
+
+    companion object {
+        private const val PAGE_SIZE = 20
     }
 }
