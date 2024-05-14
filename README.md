@@ -43,6 +43,8 @@ This application allows users to search for news articles using the NewsAPI and 
 
 **Skeleton Loading** : Skeleton Layout is used to show loading placeholders while content is loading.
 
+**Paging 3** : Paging library helps you load and display pages of data from a larger dataset from local storage or over a network. 
+
 
 ## 📱 Screenshots
 ### The logo used in this application has been created by AI.
