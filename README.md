@@ -15,35 +15,37 @@ This application allows users to search for news articles using the NewsAPI and 
 
 ## 👩🏻‍💻 Tech Stack
 
-**MVVM** : MVVM architecture pattern is used to separate the presentation layer from the business logic.
+[ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) : The ViewModel class is a business logic or screen level state holder. It exposes state to the UI and encapsulates related business logic.
 
-**Coroutines**: Coroutines are used for asynchronous programming to perform network requests and database operations efficiently.
+[Coroutines](https://developer.android.com/kotlin/coroutines) : Coroutines are used for asynchronous programming to perform network requests and database operations efficiently.
 
-**Retrofit**: Retrofit is used as the HTTP client for making API requests to NewsAPI.
+[Retrofit](https://github.com/square/retrofit): Retrofit is used as the HTTP client for making API requests to NewsAPI.
 
-**Glide**: Glide is used for image loading and caching to display article images efficiently.
+[Glide](https://github.com/bumptech/glide): Glide is used for image loading and caching to display article images efficiently.
 
-**LiveData**: LiveData is used to observe changes in data and update the UI accordingly.
+[LiveData](https://developer.android.com/topic/libraries/architecture/livedata): LiveData is used to observe changes in data and update the UI accordingly.
 
-**JUnit**: JUnit is used for unit testing to ensure the correctness of individual components.
+[JUnit](https://junit.org/junit5/): JUnit is used for unit testing to ensure the correctness of individual components.
 
-**MockWebServer**: MockWebServer is used for mocking HTTP responses in unit tests.
+[MockWebServer](https://github.com/square/okhttp/tree/master/mockwebserver): MockWebServer is used for mocking HTTP responses in unit tests.
 
-**Truth**: Truth is used for assertions in unit tests to make test code more readable and maintainable.
+[Truth](https://truth.dev/): Truth is used for assertions in unit tests to make test code more readable and maintainable.
 
-**Flow**: Flow is used for handling streams of data asynchronously and reactively.
+[Flow](https://developer.android.com/kotlin/flow): Flow is used for handling streams of data asynchronously and reactively.
 
-**Hilt**: Hilt is used for dependency injection to manage dependencies in a modular and maintainable way.
+[Hilt](https://developer.android.com/training/dependency-injection/hilt-android): Hilt is used for dependency injection to manage dependencies in a modular and maintainable way.
 
-**ViewBinding**: ViewBinding is used to replace findViewById for accessing views in the layout XML files.
+[ViewBinding](https://developer.android.com/topic/libraries/view-binding): ViewBinding is used to replace findViewById for accessing views in the layout XML files.
 
-**Jetpack Navigation**: Navigation Component is used for implementing navigation between fragments.
+[Jetpack Navigation](https://developer.android.com/guide/navigation): Navigation Component is used for implementing navigation between fragments.
 
-**DiffUtil** : DiffUtil is used for calculating the difference between two lists efficiently, particularly in RecyclerView adapters.
+[DiffUtil](https://developer.android.com/reference/androidx/recyclerview/widget/DiffUtil) : DiffUtil is used for calculating the difference between two lists efficiently, particularly in RecyclerView adapters.
 
-**Skeleton Loading** : Skeleton Layout is used to show loading placeholders while content is loading.
+[Skeleton Loading](https://github.com/Faltenreich/SkeletonLayout) : Skeleton Layout is used to show loading placeholders while content is loading.
 
-**Paging 3** : Paging library helps you load and display pages of data from a larger dataset from local storage or over a network. 
+[Paging 3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview) : Paging library helps you load and display pages of data from a larger dataset from local storage or over a network. 
+
+[Room](https://developer.android.com/training/data-storage/room) : The Room persistence library provides an abstraction layer over SQLite to allow fluent database access while harnessing the full power of SQLite.
 
 
 ## 📱 Screenshots
